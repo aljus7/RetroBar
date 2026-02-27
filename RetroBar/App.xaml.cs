@@ -95,7 +95,6 @@ namespace RetroBar
             }
         }
 
-        // Fix IDE1006: Rename loadTheme to LoadTheme
         private void loadTheme()
         {
             _dictionaryManager.SetThemeFromSettings();
