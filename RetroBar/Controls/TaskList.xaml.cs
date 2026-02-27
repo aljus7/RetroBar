@@ -6,6 +6,8 @@ using System;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Collections;
 
 namespace RetroBar.Controls
 {
@@ -85,6 +87,13 @@ namespace RetroBar.Controls
                 {
                     taskbarItems.CollectionChanged += GroupedWindows_CollectionChanged;
                     taskbarItems.Filter = Tasks_Filter;
+
+                    if (taskbarItems is ListCollectionView lcv)
+                    {
+                        lcv.CustomSort = (IComparer)(Settings.Instance.SortTaskbarByProgramName
+                        ? new ProgramNameTaskbarSorter()
+                        : null);
+                    }
                 }
 
                 TasksList.ItemsSource = taskbarItems;
