@@ -3,15 +3,12 @@ using ManagedShell.Common.Enums;
 using ManagedShell.Common.Helpers;
 using ManagedShell.Common.Logging;
 using ManagedShell.Interop;
-using ManagedShell.WindowsTasks;
 using RetroBar.Utilities;
 using System;
-using System.Collections;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
-using System.Windows.Data; // Fix for CS0246
 using System.Windows.Interop;
 using System.Windows.Media;
 using Application = System.Windows.Application;
@@ -61,7 +58,7 @@ namespace RetroBar
             }
 
             _dictionaryManager.SetLanguageFromSettings();
-            LoadTheme(); // Fixed naming
+            loadTheme();
             _windowManager = new WindowManager(_dictionaryManager, _explorerMonitor, _shellManager, _startMenuMonitor, _updater, _hotkeyManager);
         }
 
@@ -99,7 +96,7 @@ namespace RetroBar
         }
 
         // Fix IDE1006: Rename loadTheme to LoadTheme
-        private void LoadTheme()
+        private void loadTheme()
         {
             _dictionaryManager.SetThemeFromSettings();
             setTaskIconSize();
