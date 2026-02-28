@@ -389,6 +389,13 @@ namespace RetroBar.Utilities
             get => _sortTaskbarByProgramName;
             set => Set(ref _sortTaskbarByProgramName, value);
         }
+
+        private string _taskbarSortingFilter = "";
+        public string TaskbarSortingFilter
+        {
+            get => _taskbarSortingFilter;
+            set => Set(ref _taskbarSortingFilter, value);
+        }
         #endregion
 
         #region Old Properties
