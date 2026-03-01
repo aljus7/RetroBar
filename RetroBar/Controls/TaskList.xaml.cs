@@ -93,9 +93,10 @@ namespace RetroBar.Controls
 
                     if (taskbarItems is ListCollectionView lcv)
                     {
-                        lcv.CustomSort = (IComparer)(Settings.Instance.SortTaskbarByProgramName
+                        /*lcv.CustomSort = (IComparer)(Settings.Instance.SortTaskbarByProgramName
                         ? programNameTaskbarSorter
-                        : null);
+                        : null);*/
+                        lcv.CustomSort = programNameTaskbarSorter;
                     }
                 }
 
